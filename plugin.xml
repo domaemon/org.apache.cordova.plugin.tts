@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+           id="org.apache.cordova.plugins.tts"
+      version="0.2.0">
+	
+    <name>TTS</name>
+    <description>Cordova TTS Plugin</description>
+    <license>Apache 2.0</license>
+    <keywords>cordova,tts</keywords>
+
+    <js-module src="www/tts.js" name="tts">
+        <clobbers target="navigator.tts" />
+    </js-module>
+    
+</plugin>
