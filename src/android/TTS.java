@@ -21,9 +21,9 @@ import android.speech.tts.TextToSpeech;
 import android.speech.tts.TextToSpeech.OnInitListener;
 import android.speech.tts.TextToSpeech.OnUtteranceCompletedListener;
 
-import org.apache.cordova.api.CallbackContext;
-import org.apache.cordova.api.CordovaPlugin;
-import org.apache.cordova.api.PluginResult;
+import org.apache.cordova.CallbackContext;
+import org.apache.cordova.CordovaPlugin;
+import org.apache.cordova.PluginResult;
 
 public class TTS extends CordovaPlugin implements OnInitListener, OnUtteranceCompletedListener {
 
@@ -125,8 +125,6 @@ public class TTS extends CordovaPlugin implements OnInitListener, OnUtteranceCom
                     callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.ERROR, error));
                 }
             } else if (action.equals("startup")) {
-
-		Log.d(LOG_TAG, "startup");
 
                 this.startupCallbackContext = callbackContext;
                 if (mTts == null) {
