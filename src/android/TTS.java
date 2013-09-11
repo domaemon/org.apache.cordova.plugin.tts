@@ -133,9 +133,7 @@ public class TTS extends CordovaPlugin implements OnInitListener, OnUtteranceCom
                 }
                 PluginResult pluginResult = new PluginResult(status, TTS.INITIALIZING);
                 pluginResult.setKeepCallback(true);
-		// this line is not needed as the same is repeated in the onInit()
-		// domaemon
-                // startupCallbackContext.sendPluginResult(pluginResult);
+		startupCallbackContext.sendPluginResult(pluginResult);
             }
             else if (action.equals("shutdown")) {
                 if (mTts != null) {
@@ -193,7 +191,10 @@ public class TTS extends CordovaPlugin implements OnInitListener, OnUtteranceCom
             PluginResult result = new PluginResult(PluginResult.Status.OK, TTS.STARTED);
             result.setKeepCallback(false);
             //this.success(result, this.startupCallbackId);
-            this.startupCallbackContext.sendPluginResult(result);
+
+	    // this line is not needed as the same is repeated at startup
+	    // domaemon
+            // this.startupCallbackContext.sendPluginResult(result);
             mTts.setOnUtteranceCompletedListener(this);
 //            Putting this code in hear as a place holder. When everything moves to API level 15 or greater
 //            we'll switch over to this way of trackign progress.
