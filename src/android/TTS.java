@@ -133,7 +133,9 @@ public class TTS extends CordovaPlugin implements OnInitListener, OnUtteranceCom
                 }
                 PluginResult pluginResult = new PluginResult(status, TTS.INITIALIZING);
                 pluginResult.setKeepCallback(true);
-                startupCallbackContext.sendPluginResult(pluginResult);
+		// this line is not needed as the same is repeated in the onInit()
+		// domaemon
+                // startupCallbackContext.sendPluginResult(pluginResult);
             }
             else if (action.equals("shutdown")) {
                 if (mTts != null) {
