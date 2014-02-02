@@ -24,4 +24,16 @@
     <source-file src="src/android/TTS.java" target-dir="src/org/apache/cordova/plugin/" />
     
   </platform>
+  
+  <!-- android -->
+  <platform name="amazon-fireos">
+    <config-file target="res/xml/config.xml" parent="/*">
+      <feature name="TTS">
+	<param name="android-package" value="org.apache.cordova.plugin.TTS"/>
+      </feature>
+    </config-file>
+    
+    <source-file src="src/android/TTS.java" target-dir="src/org/apache/cordova/plugin/" />
+    
+  </platform>
 </plugin>
